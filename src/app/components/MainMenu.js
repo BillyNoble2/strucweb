@@ -18,16 +18,34 @@ export default function MainMenu() {
               title="Connections"
               button1Title="Flatbar Bracing"
               button2Title="CHS Bracing"
-              button1Route="/flatbar-bracing"  // Define the routes for each button
+              button1Route="/flatbar"  // Define the routes for each button
               button2Route="/chs-bracing"
             />
           </div>
         </div>
         <div className={styles.column}>
-          <div className={styles.contentBox}>Member Design</div>
+          <div className={styles.contentBox}>
+          <MenuCard 
+              title="Member Design"
+              button1Title="Gable Post"
+              button2Title="Gable Rafter"
+              button1Route="/gable-post"  // Define the routes for each button
+              button2Route="/gable-rafter"
+            />
+
+          </div>
         </div>
         <div className={styles.column}>
-          <div className={styles.contentBox}>Structural Analysis</div>
+          <div className={styles.contentBox}>
+          <MenuCard 
+              title="Structural Analysis"
+              button1Title="Column"
+              button2Title="Beam"
+              button1Route="/column"  // Define the routes for each button
+              button2Route="/beam"
+            />
+
+          </div>
         </div>
       </main>
     </div>

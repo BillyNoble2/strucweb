@@ -17,7 +17,7 @@ export default function DropdownMenu() {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigate('/login'); // Redirect to login page after sign-out
+        navigate('/Login'); // Redirect to login page after sign-out
       })
       .catch((error) => {
         console.error("Error signing out: ", error);

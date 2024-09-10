@@ -1,0 +1,79 @@
+.overallDiv{
+    display: flex;
+    margin-bottom: 0px;
+}
+
+/* Position the container to the left side of the page */
+.container {
+    width: 500px; /* Adjust width to fit form */
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Make the container's children stretch to fill the width */
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid black;
+    margin-left: 50px; /* Adjust the left margin to place the container */
+    margin-top: 50px; /* Add top margin for spacing from the top */
+}
+
+/* Split the container into 3 equal-width sections */
+.formSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Make each section take up the full width of the container */
+}
+
+.formGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.formGroup label {
+    width: 150px; /* Set a fixed width for labels */
+    margin-right: 20px;
+    text-align: right;
+}
+
+.formGroup input {
+    width: 200px; /* Set consistent input width */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.unit {
+    margin-left: 10px;
+    width: 50px;
+    text-align: left;
+}
+
+/* Center the header within the container */
+.header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    align-self: center; /* Center the header horizontally */
+}
+
+/* Style the calculate button and make it full-width */
+.calc {
+    padding: 0.75rem 1.5rem;
+    width: 100%; /* Make the button take up the full width of its container */
+    background-color: #315A73;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: larger;
+    font-family: "Titillium Web", sans-serif;
+    align-self: center; /* Center the button horizontally */
+    margin-top: 20px;
+}
+
+.calc:hover {
+    background-color: #203b4c;
+}
+
+
