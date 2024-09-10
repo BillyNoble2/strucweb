@@ -19,7 +19,6 @@ export default function page() {
           <Route path = "/Register" element = {<Register />} />
           <Route path = "/ResetPass" element = {<ResetPass />} />
           <Route path = "/MainMenu" element = {<MainMenu />} />
-
         </Routes>
     </Router>
     </div>

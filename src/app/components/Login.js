@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./css/Login.css";
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAu_-yfSp2o55nA3H2V017sJu1FnLKVd5Y",
@@ -24,6 +24,17 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Check if user is already authenticated
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate('/mainmenu'); // Redirect to MainMenu if user is already signed in
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup subscription on component unmount
+  }, [navigate]);
+
   const handleLogin = (e) => {
     e.preventDefault(); // Prevent form submission
 
@@ -31,7 +42,7 @@ export default function Login() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("Signed in successfully:", user);
-        navigate('/mainmenu'); // Navigate to MainMenu using react-router-dom
+        navigate('/MainMenu'); // Navigate to MainMenu using react-router-dom
       })
       .catch((error) => {
         alert('Incorrect login details!');
@@ -50,6 +61,7 @@ export default function Login() {
   return (
     <div id="container">
       <h1>Structural Assistant</h1>
+      <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
@@ -75,8 +87,8 @@ export default function Login() {
           <button type="submit" id="loginButton">Login</button>
         </div>
       </form>
-        <a onClick={handleRegisterClick}>Register for an account</a>
-        <a onClick={handleResetClick}>Forgotten password?</a>
+      <a onClick={handleRegisterClick} href="#">Register for an account</a>
+      <a onClick={handleResetClick} href="#">Forgotten password?</a>
     </div>
   );
 }
