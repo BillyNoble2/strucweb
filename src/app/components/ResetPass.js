@@ -46,6 +46,7 @@ export default function ResetPass() {
                     <input 
                         type="email" 
                         id="email" 
+                        placeholder='Email address.'
                         value={email} 
                         onChange={(e) => setEmail(e.target.value)} 
                         required 

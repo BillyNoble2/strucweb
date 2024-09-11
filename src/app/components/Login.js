@@ -60,7 +60,7 @@ export default function Login() {
 
   return (
     <div id="container">
-      <h1>Structural Assistant</h1>
+      <h1>StructuralAssistant</h1>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <div className="form-group">
@@ -68,6 +68,7 @@ export default function Login() {
           <input 
             type="email" 
             id="email" 
+            placeholder = "Enter your email."
             value={email} 
             onChange={(e) => setEmail(e.target.value)} 
             required 
@@ -78,6 +79,7 @@ export default function Login() {
           <input 
             type="password" 
             id="password" 
+            placeholder = "Password"
             value={password} 
             onChange={(e) => setPassword(e.target.value)} 
             required 

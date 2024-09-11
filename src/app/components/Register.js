@@ -48,13 +48,14 @@ export default function Register() {
 
   return (
     <div id="container">
-      <h1>Register for an Account</h1>
+      <h1>Register for <br></br>an Account</h1>
       <form onSubmit={handleRegister}>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
+            placeholder='Email address'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -65,6 +66,7 @@ export default function Register() {
           <input
             type="password"
             id="password"
+            placeholder = "Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -75,6 +77,7 @@ export default function Register() {
           <input
             type="password"
             id="retypePassword"
+            placeholder='Retype Password'
             value={retypePassword}
             onChange={(e) => setRetypePassword(e.target.value)}
             required
